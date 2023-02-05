@@ -7,12 +7,8 @@ function equationErrorHandler($errno, $errstr, $errfile, $errline)
 
 set_error_handler("equationErrorHandler");
 
-function solve_equation($a, $b, $c)
+function solve_equation($a, $b)
 {
-    if ($a === 0) {
-        trigger_error("Division by zero");
-        return;
-    }
-    return $b / $a - $b;
+    return -$b / $a;
 }
-echo solve_equation(0, -2, 4);
+echo solve_equation(0, -2);
